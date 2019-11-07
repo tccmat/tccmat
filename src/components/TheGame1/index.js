@@ -46,45 +46,76 @@ export default class TheGame extends React.Component{
             cartaSelecionada: 0,
 
             Operacao: null,
-                
+
+            Clicked:0,
+            
+            corBordaC1: "black",
+            corBordaC2: "black",
+            corBordaC3: "black",
+            corBordaC4: "black",
+            corBordaC5: "black",
         };
     }
 
     carta1(){  
-        setTimeout(() => {
-            this.setState({ cartaSelecionada: 1});
-            this.mostrarConteudo();
-        }, 100)  
+        if(this.state.Clicked == 0){
+                this.setState({ cartaSelecionada: 1, Clicked: 1, corBordaC1:"#00acb1"});
+        }else if(this.state.Clicked == 1 && this.state.cartaSelecionada != 1){
+            alert("Voce nao pode selecionar outra carta!!")
+        } 
     }
     carta2(){
-        setTimeout(() => {
-            this.setState({ cartaSelecionada: 2});
-            this.mostrarConteudo();
-        }, 100)
+        if(this.state.Clicked == 0){
+            this.setState({ cartaSelecionada: 2, Clicked: 1, corBordaC2:"#00acb1"});
+        }else if(this.state.Clicked == 1 && this.state.cartaSelecionada != 2){
+            alert("Voce nao pode selecionar outra carta!!")
+        } 
     }
     carta3(){;
-        setTimeout(() => {
-            this.setState({ cartaSelecionada: 3});
-            this.mostrarConteudo();
-        }, 100)
+        if(this.state.Clicked == 0){
+            this.setState({ cartaSelecionada: 3, Clicked: 1, corBordaC3:"#00acb1"});
+        }else if(this.state.Clicked == 1 && this.state.cartaSelecionada != 3){
+            alert("Voce nao pode selecionar outra carta!!")
+        } 
     }
     carta4(){
-        setTimeout(() => {
-            this.setState({ cartaSelecionada: 4});
-            this.mostrarConteudo();
-        }, 100)
+        if(this.state.Clicked == 0){
+            this.setState({ cartaSelecionada: 4, Clicked: 1, corBordaC4:"#00acb1"});
+        }else if(this.state.Clicked == 1 && this.state.cartaSelecionada != 4){
+            alert("Voce nao pode selecionar outra carta!!")
+        } 
     }
     carta5(){
-        setTimeout(() => {
-            this.setState({ cartaSelecionada: 5});
-            this.mostrarConteudo();
-        }, 100)
+        if(this.state.Clicked == 0){
+            this.setState({ cartaSelecionada: 5, Clicked: 1, corBordaC5:"#00acb1"});
+        }else if(this.state.Clicked == 1 && this.state.cartaSelecionada != 5){
+            alert("Voce nao pode selecionar outra carta!!")
+        }
     }
 
     componentDidMount() {
         this.zerarP();
         this.setarNumeros();
+    }
 
+    resetarClick(){
+        setTimeout(() => {
+            this.setState({
+                Clicked : 0
+            })
+        }, 100);
+    }
+
+    resetarCor(){
+        setTimeout(() => {
+            this.setState({
+                corBordaC1: "black",
+                corBordaC2: "black",
+                corBordaC3: "black",
+                corBordaC4: "black",
+                corBordaC5: "black",
+            });
+        }, 100);
     }
 
     mostrarConteudo = () => {
@@ -146,9 +177,8 @@ export default class TheGame extends React.Component{
                 c3: null,
                 c4: null,
                 c5: null,
-
             });
-        }, 10000)
+        }, 5000)
 
     }
 
@@ -201,9 +231,11 @@ export default class TheGame extends React.Component{
                     }
                 }
                 this.descelecionar();
+                this.resetarClick();
                 this.sumirConteudo();
                 this.apagarOperacao();
                 this.setarNumeros();
+                this.resetarCor();
             }   
         }, 100)       
     }
@@ -216,13 +248,13 @@ export default class TheGame extends React.Component{
 
     tentarNovamente(){
         setTimeout(() => {
-            this.limparCards()
-
+            this.resetarClick();
             this.descelecionar();
             this.setarNumeros();
             this.apagarOperacao();
             this.zerarP();
-        },10);
+            this.resetarCor();
+        },100);
     }
 
     apagarOperacao = () => {
@@ -232,7 +264,7 @@ export default class TheGame extends React.Component{
     mostarOperacao = (x1,x2) => {
         setTimeout(() => {
             this.setState({ n1:x1, n2:x2});
-        }, 10000)
+        }, 5000)
     }
 
     setarOperacao = (op) => {
@@ -241,24 +273,9 @@ export default class TheGame extends React.Component{
         });
     }
 
-    limparCards(){
-        this.setState({
-            c1: null,
-            c2: null,
-            c3: null,
-            c4: null,
-            c5: null,
-
-            card1: null,
-            card2: null,
-            card3: null,
-            card4: null,
-            card5: null,
-        });
-    }
-
     setarNumeros() {
         setTimeout(() => {
+            this.descelecionar();
             let tipoOperacao = Math.floor(Math.random() * 3 + 1);
             //console.log(tipoOperacao)
 
@@ -525,140 +542,138 @@ export default class TheGame extends React.Component{
                     this.mostarOperacao(x1,x2);
                 } 
             }else if(tipoOperacao == 3){
-                setTimeout(() => {
-                    let x =Math.floor(Math.random() * 5 + 1);
+                let x =Math.floor(Math.random() * 5 + 1);
 
-                    do{
-                        var x1 = Math.floor(Math.random() * 10 + 6);               
-                        var x2 = Math.floor(Math.random() * 10 + 2);
-                    }while(x1%x2!=0); 
-    
-                    let r1 = Math.floor(Math.random() * 20 + 10);
-                    let r2 = Math.floor(Math.random() * 30 + 21);
-                    let r3 = Math.floor(Math.random() * 40 + 31);
-                    let r4 = Math.floor(Math.random() * 50 + 41);
-    
-                    this.setarOperacao("/");
-    
-                    let r = x1/x2;
-                    
-                    if(x == 1){
-                        this.setState({
-                            m1: x1,
-                            m2: x2,
-    
-                            c1: r1,
-                            c2: r2,
-                            c3: r3,
-                            c4: r4,
-                            c5: r,
-    
-                            card1: r1,
-                            card2: r2,
-                            card3: r3,
-                            card4: r4,
-                            card5: r,
-                            
-                            tipo: 1,
-    
-                            resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
-                    }else if(x == 2){
-                        this.setState({
-                            m1: x1,
-                            m2: x2,
-    
-                            c1: r1,
-                            c2: r,
-                            c3: r3,
-                            c4: r4,
-                            c5: r2,
-    
-                            card1: r1,
-                            card2: r,
-                            card3: r3,
-                            card4: r4,
-                            card5: r2,
-    
-                            tipo: 2,
-    
-                            resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
-                    }else if(x == 3){
-                        this.setState({
-                            m1: x1,
-                            m2: x2,
-    
-                            c1: r,
-                            c2: r2,
-                            c3: r3,
-                            c4: r4,
-                            c5: r1,
-    
-                            card1: r,
-                            card2: r2,
-                            card3: r3,
-                            card4: r4,
-                            card5: r1,
-    
-                            tipo: 3,
-    
-                            resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
-                    }else if(x == 4){
-                        this.setState({
-                            m1: x1,
-                            m2: x2,
-    
-                            c1: r1,
-                            c2: r2,
-                            c3: r3,
-                            c4: r,
-                            c5: r4,
-    
-                            card1: r1,
-                            card2: r2,
-                            card3: r3,
-                            card4: r,
-                            card5: r4,
-    
-                            tipo: 4,
-    
-                            resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
-                    }else if(x == 5){
-                        this.setState({
-                            m1: x1,
-                            m2: x2,
-    
-                            c1: r1,
-                            c2: r2,
-                            c3: r,
-                            c4: r4,
-                            c5: r3,
-    
-                            card1: r1,
-                            card2: r2,
-                            card3: r,
-                            card4: r4,
-                            card5: r3,
-    
-                            tipo: 5,
-    
-                            resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
-                    } 
-                }); 
+                do{
+                    var x1 = Math.floor(Math.random() * 5 + 1);               
+                    var x2 = Math.floor(Math.random() * 5 + 1);
+                }while(x1%x2!=0);
+
+                let r1 = Math.floor(Math.random() * 20 + 10);
+                let r2 = Math.floor(Math.random() * 30 + 21);
+                let r3 = Math.floor(Math.random() * 40 + 31);
+                let r4 = Math.floor(Math.random() * 50 + 41);
+
+                this.setarOperacao("/");
+
+                let r = x1/x2;
+                
+                if(x == 1){
+                    this.setState({
+                        m1: x1,
+                        m2: x2,
+
+                        c1: r1,
+                        c2: r2,
+                        c3: r3,
+                        c4: r4,
+                        c5: r,
+
+                        card1: r1,
+                        card2: r2,
+                        card3: r3,
+                        card4: r4,
+                        card5: r,
+                        
+                        tipo: 1,
+
+                        resposta: r,
+                    })
+                    this.sumirConteudo();
+                    this.mostarOperacao(x1,x2);
+                }else if(x == 2){
+                    this.setState({
+                        m1: x1,
+                        m2: x2,
+
+                        c1: r1,
+                        c2: r,
+                        c3: r3,
+                        c4: r4,
+                        c5: r2,
+
+                        card1: r1,
+                        card2: r,
+                        card3: r3,
+                        card4: r4,
+                        card5: r2,
+
+                        tipo: 2,
+
+                        resposta: r,
+                    })
+                    this.sumirConteudo();
+                    this.mostarOperacao(x1,x2);
+                }else if(x == 3){
+                    this.setState({
+                        m1: x1,
+                        m2: x2,
+
+                        c1: r,
+                        c2: r2,
+                        c3: r3,
+                        c4: r4,
+                        c5: r1,
+
+                        card1: r,
+                        card2: r2,
+                        card3: r3,
+                        card4: r4,
+                        card5: r1,
+
+                        tipo: 3,
+
+                        resposta: r,
+                    })
+                    this.sumirConteudo();
+                    this.mostarOperacao(x1,x2);
+                }else if(x == 4){
+                    this.setState({
+                        m1: x1,
+                        m2: x2,
+
+                        c1: r1,
+                        c2: r2,
+                        c3: r3,
+                        c4: r,
+                        c5: r4,
+
+                        card1: r1,
+                        card2: r2,
+                        card3: r3,
+                        card4: r,
+                        card5: r4,
+
+                        tipo: 4,
+
+                        resposta: r,
+                    })
+                    this.sumirConteudo();
+                    this.mostarOperacao(x1,x2);
+                }else if(x == 5){
+                    this.setState({
+                        m1: x1,
+                        m2: x2,
+
+                        c1: r1,
+                        c2: r2,
+                        c3: r,
+                        c4: r4,
+                        c5: r3,
+
+                        card1: r1,
+                        card2: r2,
+                        card3: r,
+                        card4: r4,
+                        card5: r3,
+
+                        tipo: 5,
+
+                        resposta: r,
+                    })
+                    this.sumirConteudo();
+                    this.mostarOperacao(x1,x2);
+                } 
             }else if(tipoOperacao == 4){
                 let x =Math.floor(Math.random() * 5 + 1);
 
@@ -802,11 +817,11 @@ export default class TheGame extends React.Component{
                    <Title><P>Pontuação:</P><P>{this.state.pontuação}</P></Title>
                </ContainerTitle>
                <ContainerCards>
-                   <CardUp onClick={this.carta1}>{this.state.c1}</CardUp>
-                   <CardUp onClick={this.carta2}>{this.state.c2}</CardUp>
-                   <CardUp onClick={this.carta3}>{this.state.c3}</CardUp>
-                   <CardUp onClick={this.carta4}>{this.state.c4}</CardUp>
-                   <CardUp onClick={this.carta5}>{this.state.c5}</CardUp>            
+                   <CardUp onClick={this.carta1} cor={this.state.corBordaC1}>{this.state.c1}</CardUp>
+                   <CardUp onClick={this.carta2} cor={this.state.corBordaC2}>{this.state.c2}</CardUp>
+                   <CardUp onClick={this.carta3} cor={this.state.corBordaC3}>{this.state.c3}</CardUp>
+                   <CardUp onClick={this.carta4} cor={this.state.corBordaC4}>{this.state.c4}</CardUp>
+                   <CardUp onClick={this.carta5} cor={this.state.corBordaC5}>{this.state.c5}</CardUp>            
                </ContainerCards>
                <ContainerButton>
                    <Button onClick={this.tentarNovamente}>Reiniciar jogo</Button>

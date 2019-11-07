@@ -10,6 +10,7 @@ export default class Header extends React.Component{
                 <Img></Img>
                 <Link to='/'><Button>Home</Button></Link>
                 <Link to='/game'><Button>Game</Button></Link>
+                <Link to='/game1'><Button>Aumento de dificuldade</Button></Link>
             </ContainerHeader>
         );
     }

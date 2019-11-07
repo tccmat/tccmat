@@ -5,6 +5,7 @@ import Header from './components/Header/index';
 
 import Home from './views/Home/index';
 import Game from './views/Game/index';
+import Game1 from './views/Game1/index';
 
 import './assets/style.css';
 
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/game" component={Game}/>
+          <Route path="/game1" component={Game1}/>
         </Switch>
       </div>
     </Router>
