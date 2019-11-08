@@ -12,8 +12,5 @@ const P = styled.a`
     color: white;
     text-decoration: none;
 `
-const A = styled.a`
-    text-decoration: none;
-`
 
-export {ContainerFooter, P, A}
+export {ContainerFooter, P}
