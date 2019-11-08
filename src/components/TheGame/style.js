@@ -5,6 +5,8 @@ const ContainerMain = styled.div`
     flex-direction: column;
     align-items: flex-start;
     font-family: Arial, Helvetica, sans-serif;
+    border: solid 3px black;
+    border-radius: 20px;
 `
 const ContainerTitle = styled.div`
     display: flex;
@@ -22,7 +24,7 @@ const ContainerCards = styled.div`
     align-items: center;
     background: #9ffa9d;
     width: 100%;
-    height: 300px;
+    height: 250px;
 `
 const ContainerButton = styled.div`
     display: flex;
@@ -92,8 +94,5 @@ const CardUp = styled.div`
     &:active{
         background:black;
     }
-
-
 `
-
 export { ContainerTitle, ContainerButton, ContainerCards, ContainerMain, Title, Button, CardUp, P }

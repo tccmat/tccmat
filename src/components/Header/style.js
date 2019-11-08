@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import Logo from '../../assets/logo7.png'
+import Logo from '../../assets/Logo.png'
 
 const ContainerHeader = Styled.div`
     background: #25008c;
@@ -7,8 +7,7 @@ const ContainerHeader = Styled.div`
     justify-content: left;
     align-items: center;
     width: 100%;
-    max-height: 100px; 
-    margin-bottom: 70px;
+    max-height: 100px;
     color: white;
 `
 

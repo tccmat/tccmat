@@ -6,6 +6,7 @@ import Header from './components/Header/index';
 import Home from './views/Home/index';
 import Game from './views/Game/index';
 import Game1 from './views/Game1/index';
+import Footer from './components/Footer/index'
 
 import './assets/style.css';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/game" component={Game}/>
           <Route path="/game1" component={Game1}/>
         </Switch>
+        <Footer></Footer>
       </div>
     </Router>
   );

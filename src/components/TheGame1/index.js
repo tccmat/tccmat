@@ -207,27 +207,37 @@ export default class TheGame extends React.Component{
                 if(this.state.tipo == 1){
                     if(this.state.cartaSelecionada == 5){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }else if(this.state.tipo == 2){
                     if(this.state.cartaSelecionada == 2){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }else if(this.state.tipo == 3){
                     if(this.state.cartaSelecionada == 1){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }else if(this.state.tipo == 4){
                     if(this.state.cartaSelecionada == 4){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }else if(this.state.tipo == 5){
                     if(this.state.cartaSelecionada == 3){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }
                 this.descelecionar();

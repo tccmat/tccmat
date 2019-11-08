@@ -5,6 +5,8 @@ const ContainerMain = styled.div`
     flex-direction: column;
     align-items: flex-start;
     font-family: Arial, Helvetica, sans-serif;
+    border: solid 3px black;
+    border-radius: 20px;
 `
 const ContainerTitle = styled.div`
     display: flex;
@@ -81,7 +83,7 @@ const CardUp = styled.div`
     margin: 10px;
     height: 150px;
     border-radius: 10px;
-    border: solid 3px ${props => props.cor};
+    border: solid 3px #333;
     font-size: 60px;
     cursor: pointer;
     &:hover{

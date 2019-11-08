@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContainerTitle, ContainerButton, ContainerCards, ContainerMain, Title, Button, CardUp, P } from './style';
+import { ContainerTitle, ContainerButton, ContainerCards, ContainerMain, Title, Button, CardUp, P} from './style';
 
 export default class TheGame extends React.Component{
 
@@ -46,45 +46,40 @@ export default class TheGame extends React.Component{
             cartaSelecionada: 0,
 
             Operacao: null,
-                
+
+            contador: 10,    
         };
     }
 
     carta1(){  
         setTimeout(() => {
-            this.setState({ cartaSelecionada: 1});
-            this.mostrarConteudo();
+            this.setState({ cartaSelecionada: 1},this.mostrarConteudo());
         }, 100)  
     }
     carta2(){
         setTimeout(() => {
-            this.setState({ cartaSelecionada: 2});
-            this.mostrarConteudo();
+            this.setState({ cartaSelecionada: 2},this.mostrarConteudo());
         }, 100)
     }
     carta3(){;
         setTimeout(() => {
-            this.setState({ cartaSelecionada: 3});
-            this.mostrarConteudo();
+            this.setState({ cartaSelecionada: 3},this.mostrarConteudo());
         }, 100)
     }
     carta4(){
         setTimeout(() => {
-            this.setState({ cartaSelecionada: 4});
-            this.mostrarConteudo();
+            this.setState({ cartaSelecionada: 4},this.mostrarConteudo());
         }, 100)
     }
     carta5(){
         setTimeout(() => {
-            this.setState({ cartaSelecionada: 5});
-            this.mostrarConteudo();
+            this.setState({ cartaSelecionada: 5},this.mostrarConteudo());
         }, 100)
     }
 
     componentDidMount() {
         this.zerarP();
         this.setarNumeros();
-
     }
 
     mostrarConteudo = () => {
@@ -177,27 +172,37 @@ export default class TheGame extends React.Component{
                 if(this.state.tipo == 1){
                     if(this.state.cartaSelecionada == 5){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }else if(this.state.tipo == 2){
                     if(this.state.cartaSelecionada == 2){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }else if(this.state.tipo == 3){
                     if(this.state.cartaSelecionada == 1){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }else if(this.state.tipo == 4){
                     if(this.state.cartaSelecionada == 4){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }else if(this.state.tipo == 5){
                     if(this.state.cartaSelecionada == 3){
                         this.adicionarP();
+                        alert("Acertou")
                     }else {
+                        alert("Errou")
                     }
                 }
                 this.descelecionar();
@@ -208,6 +213,8 @@ export default class TheGame extends React.Component{
         }, 100)       
     }
 
+
+
     descelecionar(){
         this.setState({
             cartaSelecionada: 0,
@@ -217,7 +224,6 @@ export default class TheGame extends React.Component{
     tentarNovamente(){
         setTimeout(() => {
             this.limparCards()
-
             this.descelecionar();
             this.setarNumeros();
             this.apagarOperacao();
@@ -297,9 +303,7 @@ export default class TheGame extends React.Component{
                         tipo: 1,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 2){
                     this.setState({
                         m1: x1,
@@ -320,9 +324,7 @@ export default class TheGame extends React.Component{
                         tipo: 2,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 3){
                     this.setState({
                         m1: x1,
@@ -343,9 +345,7 @@ export default class TheGame extends React.Component{
                         tipo: 3,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 4){
                     this.setState({
                         m1: x1,
@@ -366,9 +366,7 @@ export default class TheGame extends React.Component{
                         tipo: 4,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 5){
                     this.setState({
                         m1: x1,
@@ -389,9 +387,7 @@ export default class TheGame extends React.Component{
                         tipo: 5,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
             } 
             }else if(tipoOperacao == 2){
                 let x =Math.floor(Math.random() * 5 + 1);
@@ -428,9 +424,7 @@ export default class TheGame extends React.Component{
                         tipo: 1,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 2){
                     this.setState({
                         m1: x1,
@@ -451,9 +445,7 @@ export default class TheGame extends React.Component{
                         tipo: 2,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 3){
                     this.setState({
                         m1: x1,
@@ -474,9 +466,7 @@ export default class TheGame extends React.Component{
                         tipo: 3,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 4){
                     this.setState({
                         m1: x1,
@@ -497,9 +487,7 @@ export default class TheGame extends React.Component{
                         tipo: 4,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 5){
                     this.setState({
                         m1: x1,
@@ -520,16 +508,14 @@ export default class TheGame extends React.Component{
                         tipo: 5,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 } 
             }else if(tipoOperacao == 3){
                 setTimeout(() => {
                     let x =Math.floor(Math.random() * 5 + 1);
 
                     do{
-                        var x1 = Math.floor(Math.random() * 10 + 6);               
+                        var x1 = Math.floor(Math.random() * 20 + 2);               
                         var x2 = Math.floor(Math.random() * 10 + 2);
                     }while(x1%x2!=0); 
     
@@ -562,9 +548,8 @@ export default class TheGame extends React.Component{
                             tipo: 1,
     
                             resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
+                        },this.sumirConteudo(),this.mostarOperacao(x1,x2));
+                        
                     }else if(x == 2){
                         this.setState({
                             m1: x1,
@@ -585,9 +570,7 @@ export default class TheGame extends React.Component{
                             tipo: 2,
     
                             resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
+                        },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                     }else if(x == 3){
                         this.setState({
                             m1: x1,
@@ -608,9 +591,7 @@ export default class TheGame extends React.Component{
                             tipo: 3,
     
                             resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
+                        },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                     }else if(x == 4){
                         this.setState({
                             m1: x1,
@@ -631,9 +612,7 @@ export default class TheGame extends React.Component{
                             tipo: 4,
     
                             resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
+                        },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                     }else if(x == 5){
                         this.setState({
                             m1: x1,
@@ -654,9 +633,7 @@ export default class TheGame extends React.Component{
                             tipo: 5,
     
                             resposta: r,
-                        })
-                        this.sumirConteudo();
-                        this.mostarOperacao(x1,x2);
+                        },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                     } 
                 }); 
             }else if(tipoOperacao == 4){
@@ -694,9 +671,7 @@ export default class TheGame extends React.Component{
                         tipo: 1,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 2){
                     this.setState({
                         m1: x1,
@@ -717,9 +692,7 @@ export default class TheGame extends React.Component{
                         tipo: 2,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 3){
                     this.setState({
                         m1: x1,
@@ -740,9 +713,7 @@ export default class TheGame extends React.Component{
                         tipo: 3,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 4){
                     this.setState({
                         m1: x1,
@@ -763,9 +734,7 @@ export default class TheGame extends React.Component{
                         tipo: 4,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 }else if(x == 5){
                     this.setState({
                         m1: x1,
@@ -786,9 +755,7 @@ export default class TheGame extends React.Component{
                         tipo: 5,
 
                         resposta: r,
-                    })
-                    this.sumirConteudo();
-                    this.mostarOperacao(x1,x2);
+                    },this.sumirConteudo(),this.mostarOperacao(x1,x2))
                 } 
             }
         }, 10)             

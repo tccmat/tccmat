@@ -8,11 +8,14 @@ export default class Home extends React.Component{
             <ContainerHome>
                 <ContainerTutorial>
                     <Title>Tutorial</Title>
-                    <Text>Passo 1 - Observe os numeros nas cartas.</Text>
-                    <Text>Passo 2 - Observe a operação que ira aparecer.</Text>
-                    <Text>Passo 3 - Selecione a carta que devera conter o resultado correto para a operação mostrada anteriormente.</Text>
-                    <Text>Passo 4 - Aperte no botão conferir resposta para verificar se a carta certa foi selecionada.</Text>
-                    <Text>*Sera somado ao placar 10 pontos para cada acerto</Text>
+                    <Text>Serão mostradas 5 cartas, cada uma com um valor.</Text>
+                    <Text><strong>Passo 1</strong>- Observe os numeros nas cartas e os decore.</Text>
+                    <Text>Depois de 10 segundos as cartas irão esconder seus conteúdos</Text>
+                    <Text><strong>Passo 2</strong>- Observe a operação que ira aparecer na parte escrita "Operação"</Text>
+                    <Text><strong>Passo 3 </strong>Resolva a operação(da maneira que conseguir)</Text>
+                    <Text><strong>Passo 4 </strong> - Selecione a carta que contem o resultado correto para a operação mostrada.</Text>
+                    <Text><strong>Passo 5 </strong> - Aperte no botão "conferir resposta" para verificar se a carta selecionada é a correta.</Text>
+                    <Text>Caso esteja correta, sera somado ao placar 10 pontos</Text>
                 </ContainerTutorial>
             </ContainerHome>
         );

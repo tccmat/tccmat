@@ -1,19 +1,22 @@
 import Styled from 'styled-components';
+import background from '../../assets/background.png'
 
 const ContainerGame = Styled.div`
+    background-image: url(${background});
     display: flex;
-    background: #e8e8e8a6;
-    min-height: 649px; 
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+    max-height: 900px; 
     width: 100%;
     justify-content: center;
 `
 const ContainerTheGame = Styled.div`
-    background: white;
     border-radius: 20px;
     margin: 50px;
     min-width: 700px;
     min-height: 100px;
-    border: solid 3px black;
+    max-height: 550px;
 `
 
 export { ContainerGame, ContainerTheGame };
