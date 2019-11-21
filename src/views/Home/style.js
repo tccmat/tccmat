@@ -9,18 +9,25 @@ const ContainerHome = Styled.div`
     justify-content: center;
 `
 const Text = Styled.div`
-    background: #dedede;
+    background: #c7cbff;
     font-size: 30px;
     font-family: arial;
-    padding: 20px;
+    padding: 30px;   
     border-radius: 20px;
     margin: 10px;
+    margin-bottom: 40px;
+    margin-left: 120px;
+    max-width: 70%; 
 `
 
 const Title = Styled.div`
+    background: #dedede;  
     font-size: 80px;
+    margin-bottom: 20px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    font-family:  Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #25008c;
 `
 
 const ContainerTutorial = Styled.div`
@@ -28,6 +35,7 @@ const ContainerTutorial = Styled.div`
     margin: 50px;
     min-width: 700px;
     min-height: 100px;
+    border-radius: 10px; 
 
 `
 

@@ -24,10 +24,19 @@ const Button = Styled.button`
     font-size: 16px;
     &:hover{
         transform: scale(1.1);
-        color: black;
+        color: #d75dff;
+        cursor: pointer;
     }
+    border: none;
+    box-shadow: 2px 2px 4px #e6e5e5a6;
 `
-
+const Title = Styled.div`
+    background: #25008c;
+    color: white;
+    margin-left: 300px;
+    font-size: 80px;                                                                                                                                                                                 px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+`
 const Img = Styled.div`
     background-image: url(${Logo});
     background-position: center bottom;
@@ -36,4 +45,4 @@ const Img = Styled.div`
     min-height: 300px;
 `
 
-export { ContainerHeader, Button, Img };
+export { ContainerHeader, Button, Img, Title };

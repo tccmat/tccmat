@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ContainerTitle, ContainerButton, ContainerCards, ContainerMain, Title, Button, CardUp, P} from './style';
+import { ContainerTitle, ContainerButton, ContainerCards, ContainerMain, Title, Button, CardUp, P, A} from './style';
 
 export default class TheGame extends React.Component{
 
@@ -765,7 +765,7 @@ export default class TheGame extends React.Component{
         return(
            <ContainerMain>
                <ContainerTitle>
-                   <Title><P>Operação:</P><P>{this.state.n1}{this.state.Operacao}{this.state.n2}</P></Title>
+                   <Title><P style={{color:"#0309da"}}>Operação:</P><P style={{color:"#ec6d0c", fontFamily: "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"}}>{this.state.n1}{this.state.Operacao}{this.state.n2}</P></Title>
                    <Title><P>Pontuação:</P><P>{this.state.pontuação}</P></Title>
                </ContainerTitle>
                <ContainerCards>

@@ -7,15 +7,26 @@ export default class Home extends React.Component{
         return(
             <ContainerHome>
                 <ContainerTutorial>
-                    <Title>Tutorial</Title>
-                    <Text>Serão mostradas 5 cartas, cada uma com um valor.</Text>
-                    <Text><strong>Passo 1</strong>- Observe os numeros nas cartas e os decore.</Text>
-                    <Text>Depois de 10 segundos as cartas irão esconder seus conteúdos</Text>
-                    <Text><strong>Passo 2 </strong>- Observe a operação que ira aparecer na parte escrita "Operação"</Text>
-                    <Text><strong>Passo 3 </strong>- Resolva a operação(da maneira que conseguir)</Text>
-                    <Text><strong>Passo 4 </strong>- Selecione a carta que contem o resultado correto para a operação mostrada.</Text>
-                    <Text><strong>Passo 5 </strong>- Aperte no botão "conferir resposta" para verificar se a carta selecionada é a correta.</Text>
-                    <Text>Caso esteja correta, sera somado ao placar 10 pontos</Text>
+                    <Text style={{marginTop: "50px"}}>
+                        <h1>Bem Vindo ao Matematizando</h1>
+                    </Text>
+                    <Text>
+                        <Title>Objetivo do Jogo</Title>
+                        <p>Utilizar da memorização para reforçar os conteúdos aprendidos em sala.
+                        Extimular a melhora da memória do jogador, para que fique cada vez mais fácil fixar qualquer tipo de conteúdo,
+                        seja de matemática ou não, pois com uma boa memória o aprendizado fica bem mais fluido e facil de alcançar</p>
+                    </Text>
+                    <Text>
+                        <Title>Tutorial</Title>
+                        <p>Serão mostradas 5 cartas, cada uma com um valor.</p>
+                        <p><strong>Passo 1</strong>- Observe os números nas cartas e os decore.</p>
+                        <p>Depois de 10 segundos as cartas irão esconder seus conteúdos</p>
+                        <p><strong>Passo 2 </strong>- Observe a operação que irá aparecer na parte escrita "Operação"</p>
+                        <p><strong>Passo 3 </strong>- Resolva a operação(da maneira que conseguir)</p>
+                        <p><strong>Passo 4 </strong>- Selecione a carta que contem o resultado correto para a operação mostrada.</p>
+                        <p><strong>Passo 5 </strong>- Aperte no botão "conferir resposta" para verificar se a carta selecionada é a correta.</p>
+                        <p>Caso esteja correta, sera somado ao placar 10 pontos</p>
+                    </Text>
                 </ContainerTutorial>
             </ContainerHome>
         );

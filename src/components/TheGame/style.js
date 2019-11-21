@@ -39,7 +39,7 @@ const ContainerButton = styled.div`
 
 const Title = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
     background: #9ffa9d;
@@ -51,8 +51,13 @@ const Title = styled.div`
 
 const P = styled.div`
     display: flex;
-    color: black;
-    font-size: 30px;
+    font-size: 36px;
+`
+const A = styled.div`
+    display: flex;
+    color: purple;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 34px;
 `
 
 const Button = styled.div`
@@ -80,6 +85,7 @@ const CardUp = styled.div`
     align-items: center;
     background: #e1f7fc;
     width: 20%;
+    color: #e7428f;
     margin: 10px;
     height: 150px;
     border-radius: 10px;
@@ -95,4 +101,4 @@ const CardUp = styled.div`
         background:black;
     }
 `
-export { ContainerTitle, ContainerButton, ContainerCards, ContainerMain, Title, Button, CardUp, P }
+export { ContainerTitle, ContainerButton, ContainerCards, ContainerMain, Title, Button, CardUp, P, A }
