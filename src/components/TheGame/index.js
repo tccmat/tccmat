@@ -169,46 +169,50 @@ export default class TheGame extends React.Component{
             if(this.state.cartaSelecionada == 0){
                 alert("selecione uma carta");
             }else{
-                if(this.state.tipo == 1){
-                    if(this.state.cartaSelecionada == 5){
-                        this.adicionarP();
-                        alert("Acertou")
-                    }else {
-                        alert("Errou")
+                if(this.state.n1==null){
+                    alert("Espere a operação aparecer!!");
+                }else{
+                    if(this.state.tipo == 1){
+                        if(this.state.cartaSelecionada == 5){
+                            this.adicionarP();
+                            alert("Resposta correta")
+                        }else {
+                            alert("Resposta incorreta")
+                        }
+                    }else if(this.state.tipo == 2){
+                        if(this.state.cartaSelecionada == 2){
+                            this.adicionarP();
+                            alert("Resposta correta")
+                        }else {
+                            alert("Resposta incorreta")
+                        }
+                    }else if(this.state.tipo == 3){
+                        if(this.state.cartaSelecionada == 1){
+                            this.adicionarP();
+                            alert("Resposta correta")
+                        }else {
+                            alert("Resposta incorreta")
+                        }
+                    }else if(this.state.tipo == 4){
+                        if(this.state.cartaSelecionada == 4){
+                            this.adicionarP();
+                            alert("Resposta correta")
+                        }else {
+                            alert("Resposta incorreta")
+                        }
+                    }else if(this.state.tipo == 5){
+                        if(this.state.cartaSelecionada == 3){
+                            this.adicionarP();
+                            alert("Resposta correta")
+                        }else {
+                            alert("Resposta incorreta")
+                        }
                     }
-                }else if(this.state.tipo == 2){
-                    if(this.state.cartaSelecionada == 2){
-                        this.adicionarP();
-                        alert("Acertou")
-                    }else {
-                        alert("Errou")
-                    }
-                }else if(this.state.tipo == 3){
-                    if(this.state.cartaSelecionada == 1){
-                        this.adicionarP();
-                        alert("Acertou")
-                    }else {
-                        alert("Errou")
-                    }
-                }else if(this.state.tipo == 4){
-                    if(this.state.cartaSelecionada == 4){
-                        this.adicionarP();
-                        alert("Acertou")
-                    }else {
-                        alert("Errou")
-                    }
-                }else if(this.state.tipo == 5){
-                    if(this.state.cartaSelecionada == 3){
-                        this.adicionarP();
-                        alert("Acertou")
-                    }else {
-                        alert("Errou")
-                    }
-                }
-                this.descelecionar();
-                this.sumirConteudo();
-                this.apagarOperacao();
-                this.setarNumeros();
+                    this.descelecionar();
+                    this.sumirConteudo();
+                    this.apagarOperacao();
+                    this.setarNumeros();
+                } 
             }   
         }, 100)       
     }
@@ -223,11 +227,15 @@ export default class TheGame extends React.Component{
 
     tentarNovamente(){
         setTimeout(() => {
-            this.limparCards()
-            this.descelecionar();
-            this.setarNumeros();
-            this.apagarOperacao();
-            this.zerarP();
+            if(this.state.n1==null){
+                alert("Espere a operação aparecer");
+            }else{
+                this.limparCards()
+                this.descelecionar();
+                this.setarNumeros();
+                this.apagarOperacao();
+                this.zerarP();
+            }
         },10);
     }
 

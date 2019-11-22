@@ -94,8 +94,6 @@ const CardUp = styled.div`
     &:active{
         background:black;
     }
-
-
 `
 
 export { ContainerTitle, ContainerButton, ContainerCards, ContainerMain, Title, Button, CardUp, P }

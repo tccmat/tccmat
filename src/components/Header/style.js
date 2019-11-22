@@ -17,8 +17,10 @@ const Button = Styled.button`
     align-items: center;
     padding: 20px;
     margin-left: 20px;
-    min-width: 50px;
-    min-height: 20px;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 90px;
+    max-height: 90px;
     color: white;
     border-radius: 10px;
     font-size: 16px;
@@ -31,8 +33,10 @@ const Button = Styled.button`
     box-shadow: 2px 2px 4px #e6e5e5a6;
 `
 const Title = Styled.div`
+    display: flex;
     background: #25008c;
     color: white;
+    margin-right: 20px;
     margin-left: 300px;
     font-size: 80px;                                                                                                                                                                                 px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
